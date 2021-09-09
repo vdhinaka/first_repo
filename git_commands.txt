@@ -1,0 +1,81 @@
+GIT CONFIG
+There are a few commands you'll want to run before we go any further -- they just serve to associate a name and an email 
+address with any commits you make in git.  In a terminal window, type:
+
+git config --global user.name <name>
+git config --global user.email <email>
+
+Configuring a git editor
+echo "export EDITOR=nano" >> .bashrc
+source .bashrc
+
+Creating a git repository
+mkdir git
+
+Now let's cd into the git folder and make a new folder called "first_repo" that will be, unsurprisingly, our first repository.
+
+cd git
+mkdir first_repo
+cd first_repo
+notepad HelloWorld.py
+
+git init
+
+Now first_repo is a Git repository.
+
+REPO STATUS
+We can check the status of the repository using
+
+git status
+
+ADDING FILES TO THE REPOSITORY
+git add HelloWorld.py
+git status
+
+COMMITTING CHANGES
+We want to save a snapshot of the repository as it is right now; it's time to commit!
+
+git commit
+
+VIEWING CHANGES
+git diff
+
+COMMITTING CHANGES
+We want to add the changes we made to the history of the "HelloWorld.py" file.  To do this, we follow the same steps as
+ when we first added the file.
+
+First, we "stage" the changes by running
+
+git add HelloWorld.py
+
+Now check the repo status again (you'll be typing this out LOTS):
+
+> git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#   modified:   HelloWorld.py
+#
+
+Now we're ready to commit that change!  But it's a pretty simple change, isn't it?  If we know that we don't need to write out 
+a more complicated commit message, we can use a shortcut:
+
+git commit -m "Edit the message to sound more friendly"
+
+VIEWING A REPO'S HISTORY
+We have saved two snapshots of this repository.  We can look at the list of all commits using the git log command
+
+git log
+
+UPLOADING YOUR REPOSITORY TO GITHUB
+After the repository is created, GitHub will display instructions to push an existing repository to GitHub using the command line. 
+The commands are:
+
+git remote add origin https://github.com/vdhinaka/first_repo.git
+git push -u origin master
+
+git remote add is the command used to specify information about the remote repository to which you want to upload. 
+To do this, we need to provide a name for the remote, and the address of the server where it is hosted. In the above, 
+we name the remote repository origin (by convention), and specify the URL created by GitHub. 
+
